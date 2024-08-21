@@ -29,9 +29,12 @@ const sendEmail =async ()=>{
 // delay for 10 minutes
 
 const delayInMinutes = 10;
-setTimeout(sendEmail, delayInMinutes * 60 * 1000);
+setTimeout(async () => {
+    await sendEmail();
+    process.exit(); 
+}, delayInMinutes * 60 * 1000);
+
 
 module.exports = sendEmail
 
 
-// M6Q6DVUNNF825D8YSL8FNQJU
